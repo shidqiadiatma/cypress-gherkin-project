@@ -5,3 +5,4 @@ downloads/
 package-lock.json
 cypress/support/node_modules/
 node_modules
+cypress/e2e/cypress-muat2.cy.js

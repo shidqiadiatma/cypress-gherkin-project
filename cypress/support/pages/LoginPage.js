@@ -6,16 +6,20 @@ class LoginPage {
     })
   }
   typeCorrectWhatsapp() {
-    cy.get('#inpEmail').type('089654961080')
+    cy.fixture('credentials').then((data) => {
+      cy.get('#inpEmail').type(data.correctPhone)
+    })
   }
   typeWrongPassword() {
-    cy.get('#inpPassword').type('Az28476328735')
+    cy.fixture('credentials').then((data) => {
+      cy.get('#inpPassword').type(data.wrongPassword)
+    })
   }
   typeCorrectPassword() {
     cy.fixture('credentials').then((data) => {
       cy.get('#inpPassword').type(data.correctPassword)
     })
-}
+  }
   clickLogin() {
     cy.get('#btnMasuk').click()
   }

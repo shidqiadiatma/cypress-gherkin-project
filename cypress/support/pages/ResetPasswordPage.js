@@ -8,7 +8,9 @@ class ResetPasswordPage {
     cy.get('#inpNomorTelepon').type(phone)
   }
   typeRegisteredPhone() {
-    cy.get('#inpNomorTelepon').type('089654961080')
+    cy.fixture('credentials').then((data) => {
+      cy.get('#inpEmail').type(data.correctPhone)
+    })
   }
   clickSubmit() {
     cy.get('#btnMasuk').click()

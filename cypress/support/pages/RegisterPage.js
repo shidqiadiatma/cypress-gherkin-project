@@ -8,10 +8,14 @@ class RegisterPage {
     cy.get('#inpUsername').type(username)
   }
   typeRegisteredPhone() {
-    cy.get('#inpNomorTelepon').type('089654961080')
+    cy.fixture('credentials').then((data) => {
+      cy.get('#inpEmail').type(data.correctPhone)
+    })
   }
   typeUnregisteredPhone() {
-    cy.get('#inpNomorTelepon').type('081154473211')
+    cy.fixture('credentials').then((data) => {
+      cy.get('#inpEmail').type(data.wrongPhone)
+    })
   }
   typePassword(password) {
     cy.get('#inpPassword').type(password)

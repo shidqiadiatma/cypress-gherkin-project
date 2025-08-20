@@ -1,0 +1,7 @@
+fixtures/
+reports/
+screenshots/
+downloads/
+package-lock.json
+cypress/support/node_modules/
+node_modules
